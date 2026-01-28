@@ -66,9 +66,17 @@ import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 import { getPlaceholderImage } from '../../utils/images'
 
+interface Slide {
+  image: string
+  alt: string
+  title: string
+  subtitle: string
+  buttonText: string
+}
+
 const modules = [Navigation, Pagination, Autoplay, EffectFade]
 
-const slides = [
+const slides: Slide[] = [
   {
     image: getPlaceholderImage('graduation'),
     alt: 'Superior University Graduation Ceremony',
@@ -108,8 +116,12 @@ const slides = [
 
 const currentSlideIndex = ref(0)
 
-const currentSlide = computed(() => {
-  return slides[currentSlideIndex.value] || slides[0]
+const currentSlide = computed((): Slide => {
+  const index = currentSlideIndex.value
+  if (index >= 0 && index < slides.length) {
+    return slides[index] as Slide
+  }
+  return slides[0] as Slide
 })
 
 const onSlideChange = (swiper: SwiperType) => {

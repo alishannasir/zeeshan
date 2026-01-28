@@ -1,0 +1,27 @@
+/* Shared Swiper Styles */
+.swiper-container {
+  position: relative;
+}
+
+.program-swiper,
+.innovation-swiper {
+  padding-bottom: 50px;
+}
+
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
+  color: #9333ea;
+}
+
+:deep(.swiper-button-next:hover),
+:deep(.swiper-button-prev:hover) {
+  color: #7e22ce;
+}
+
+:deep(.swiper-pagination-bullet) {
+  background-color: #d1d5db;
+}
+
+:deep(.swiper-pagination-bullet-active) {
+  background-color: #9333ea;
+}

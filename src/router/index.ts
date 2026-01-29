@@ -35,6 +35,11 @@ const routes: RouteRecordRaw[] = [
     path: '/center',
     name: 'center',
     component: () => import('../views/CenterView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    redirect: '/'
   }
 ]
 

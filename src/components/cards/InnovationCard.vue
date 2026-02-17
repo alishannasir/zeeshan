@@ -25,7 +25,6 @@
 
 <script setup lang="ts">
 import ArrowIcon from '../ui/ArrowIcon.vue'
-
 defineProps<{
   title: string
   image?: string
